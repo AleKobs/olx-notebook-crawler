@@ -36,7 +36,7 @@ async function getDataInfo(page) {
 }
 
 async function start() {
-    console.log('running');
+    console.log('Rodando', new Date().toLocaleString());
     const browser = await puppeteer.launch({
         headless:true,
         args: ['--no-sandbox', '--disable-setuid-sandbox']
