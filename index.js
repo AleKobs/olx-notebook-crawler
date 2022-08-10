@@ -38,7 +38,8 @@ async function getDataInfo(page) {
 async function start() {
     console.log('running');
     const browser = await puppeteer.launch({
-        headless:true
+        headless:true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
     const page = await browser.newPage();
     await page.setRequestInterception(true);
