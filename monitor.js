@@ -66,14 +66,14 @@ async function start() {
             console.log('item novo', i)
             const msg = `*Novo Monitor*: ${i.price} \r\n \r\n ${i.title} \r\n ${i.url}`;
             sendTelegramNotebookMessage(msg);
-            itemsToWrite.push(i.url);
-            await delay(5000);
+            databaseData.push(i.url);
+            await delay(1000);
         }
     })
 
 
     
-    await fs.writeFile(FILE_TO_READ, JSON.stringify(itemsToWrite));
+    await fs.writeFile(FILE_TO_READ, JSON.stringify(databaseData));
     console.log('escrito');
     await browser.close();
     setTimeout(() => {

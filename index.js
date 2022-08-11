@@ -71,6 +71,6 @@ async function start() {
     await browser.close();
     setTimeout(() => {
         start();
-    }, 25000);
+    }, 2000);
 }
 start();
